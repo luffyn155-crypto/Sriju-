@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Happy 2 Months Sriju ❤️</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Dancing+Script:wght@600;700&family=Lato:wght@300;400&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --rose: #e8476a;
+    --blush: #f9a8c0;
+    --petal: #fce4ec;
+    --cream: #fff8f8;
+    --deep: #8b1a3a;
+    --glow: rgba(232, 71, 106, 0.35);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Lato', sans-serif;
+    background: var(--cream);
+    color: #5a1a2a;
+    overflow-x: hidden;
+    cursor: none;
+  }
+
+  /* CURSOR */
+  #cursor { position:fixed; width:20px; height:20px; font-size:16px; pointer-events:none; z-index:9999; transform:translate(-50%,-50%); transition:transform .08s; }
+  .heart-trail { position:fixed; pointer-events:none; z-index:9998; font-size:13px; animation:trailFade .9s forwards; }
+  @keyframes trailFade { 0%{opacity:1;transform:translateY(0) scale(1);} 100%{opacity:0;transform:translateY(-35px) scale(0.2);} }
+
+  /* FLOATING HEARTS */
+  #hearts-bg { position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:0; overflow:hidden; }
+  .fbheart { position:absolute; bottom:-60px; animation:floatUp linear infinite; opacity:0.15; }
+  @keyframes floatUp {
+    0%  { transform:translateY(0) rotate(0deg); opacity:0.15; }
+    50% { opacity:0.25; }
+    100%{ transform:translateY(-110vh) rotate(360deg); opacity:0; }
+  }
+
+  section { position:relative; z-index:1; }
+
+  /* NAV */
+  nav {
+    position:fixed; top:0; width:100%; z-index:100;
+    background:rgba(255,240,245,0.75); backdrop-filter:blur(14px);
+    border-bottom:1px solid rgba(232,71,106,0.15);
+    padding:12px 30px; display:flex; gap:24px; justify-content:center; flex-wrap:wrap;
+  }
+  nav a { font-size:12px; letter-spacing:1.5px; text-transform:uppercase; color:var(--deep); text-decoration:none; opacity:.7; transition:all .2s; }
+  nav a:hover { opacity:1; color:var(--rose); }
+
+  /* HERO */
+  #hero {
+    min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center;
+    text-align:center; padding:120px 24px 80px;
+    background:
+      radial-gradient(ellipse at 20% 30%, rgba(249,168,192,0.45) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 70%, rgba(232,71,106,0.22) 0%, transparent 55%),
+      linear-gradient(160deg, #fff0f5 0%, #ffe4ee 50%, #fff8f8 100%);
+  }
+  .hero-badge {
+    display:inline-block; font-size:12px; letter-spacing:2.5px; text-transform:uppercase;
+    color:var(--rose); background:rgba(232,71,106,0.1); border:1px solid rgba(232,71,106,0.25);
+    border-radius:30px; padding:6px 22px; margin-bottom:28px;
+    animation:fadeSlideDown .8s ease both;
+  }
+  .hero-main {
+    font-family:'Dancing Script', cursive; font-size:clamp(52px,9vw,100px);
+    color:var(--deep); line-height:1.1; animation:fadeSlideDown 1s .2s ease both;
+    text-shadow:0 4px 30px rgba(139,26,58,0.18);
+  }
+  .hero-main span { color:var(--rose); }
+  .hero-sub {
+    font-family:'Playfair Display',serif; font-style:italic;
+    font-size:clamp(16px,2.5vw,22px); color:#a04060; max-width:540px; margin:24px auto 0;
+    line-height:1.7; animation:fadeSlideDown 1s .5s ease both; opacity:0; animation-fill-mode:forwards;
+  }
+  .hero-hearts { margin-top:42px; font-size:28px; animation:pulse 1.8s ease-in-out infinite; }
+  @keyframes pulse { 0%,100%{transform:scale(1);} 50%{transform:scale(1.2);} }
+  @keyframes fadeSlideDown { from{opacity:0;transform:translateY(-22px);} to{opacity:1;transform:translateY(0);} }
+
+  .music-btn {
+    margin-top:36px; padding:12px 30px; border-radius:30px; border:1.5px solid var(--rose);
+    background:rgba(232,71,106,0.08); color:var(--rose); font-size:13px; letter-spacing:1px;
+    cursor:pointer; transition:all .25s; backdrop-filter:blur(6px);
+    animation:fadeSlideDown 1s .8s ease both; opacity:0; animation-fill-mode:forwards;
+    font-family:'Lato',sans-serif;
+  }
+  .music-btn:hover { background:var(--rose); color:#fff; box-shadow:0 0 24px var(--glow); }
+
+  /* MESSAGE */
+  #message {
+    min-height:100vh; display:flex; align-items:center; justify-content:center; padding:80px 24px;
+    background:linear-gradient(135deg,#fff0f5 0%,#fce4ec 50%,#fff5f8 100%);
+  }
+  .msg-card {
+    max-width:680px; width:100%; background:rgba(255,255,255,0.65); border-radius:28px;
+    border:1px solid rgba(232,71,106,0.2); padding:60px 52px;
+    backdrop-filter:blur(18px); box-shadow:0 20px 60px rgba(232,71,106,0.12);
+    text-align:center;
+  }
+  .msg-title { font-family:'Dancing Script',cursive; font-size:clamp(36px,6vw,58px); color:var(--rose); margin-bottom:32px; text-shadow:0 2px 18px rgba(232,71,106,0.28); }
+  #typewriter-text { font-family:'Playfair Display',serif; font-size:clamp(15px,1.8vw,18px); line-height:1.9; color:#6a2040; min-height:260px; text-align:left; }
+  .cursor-blink { display:inline-block; width:2px; height:1.1em; background:var(--rose); margin-left:2px; animation:blink .7s infinite; vertical-align:text-bottom; }
+  @keyframes blink{0%,100%{opacity:1;}50%{opacity:0;}}
+
+  /* GALLERY */
+  #gallery { padding:90px 40px; background:radial-gradient(ellipse at center,#fff0f5 0%,#fce4ec 100%); }
+  .section-title { text-align:center; font-family:'Dancing Script',cursive; font-size:clamp(36px,6vw,56px); color:var(--deep); margin-bottom:12px; }
+  .section-sub { text-align:center; font-family:'Playfair Display',serif; font-style:italic; color:#a04060; margin-bottom:50px; font-size:16px; }
+  .gallery-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:20px; max-width:1000px; margin:0 auto; }
+  .g-item {
+    position:relative; border-radius:18px; overflow:hidden; aspect-ratio:1;
+    background:linear-gradient(135deg,#fce4ec,#f8bbd9);
+    border:2px solid rgba(232,71,106,0.2); cursor:pointer; transition:transform .3s,box-shadow .3s;
+  }
+  .g-item:hover { transform:scale(1.04); box-shadow:0 16px 48px rgba(232,71,106,0.35); }
+  .g-item img { width:100%; height:100%; object-fit:cover; transition:filter .3s; }
+  .g-item:hover img { filter:brightness(1.06) saturate(1.1); }
+  .g-overlay { position:absolute; inset:0; background:linear-gradient(to top,rgba(139,26,58,0.6),transparent); opacity:0; transition:opacity .3s; display:flex; align-items:flex-end; padding:16px; }
+  .g-item:hover .g-overlay { opacity:1; }
+  .g-caption { color:#fff; font-family:'Dancing Script',cursive; font-size:18px; }
+  .g-placeholder { width:100%; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; color:rgba(139,26,58,0.5); font-size:13px; text-align:center; padding:20px; font-family:'Playfair Display',serif; font-style:italic; }
+  .g-placeholder .ph-icon { font-size:36px; opacity:.4; }
+
+  /* LIGHTBOX */
+  #lightbox { display:none; position:fixed; inset:0; z-index:200; background:rgba(80,0,20,0.85); backdrop-filter:blur(8px); align-items:center; justify-content:center; }
+  #lightbox.active { display:flex; }
+  #lightbox img { max-width:88vw; max-height:82vh; border-radius:20px; box-shadow:0 24px 80px rgba(0,0,0,0.5); animation:popIn .3s ease; }
+  @keyframes popIn { from{transform:scale(0.8);opacity:0;} to{transform:scale(1);opacity:1;} }
+  #lightbox-close { position:absolute; top:20px; right:28px; font-size:32px; color:#fff; cursor:pointer; }
+
+  /* TIMELINE */
+  #timeline { padding:90px 24px; background:linear-gradient(180deg,#fff8f8 0%,#fce4ec 100%); }
+  .tl-wrap { max-width:660px; margin:0 auto; position:relative; }
+  .tl-line { position:absolute; left:50%; top:0; bottom:0; width:2px; background:linear-gradient(to bottom,transparent,var(--blush),var(--rose),var(--blush),transparent); transform:translateX(-50%); }
+  .tl-item { display:flex; align-items:center; gap:24px; margin-bottom:50px; opacity:0; transform:translateY(30px); transition:opacity .6s,transform .6s; }
+  .tl-item.visible { opacity:1; transform:translateY(0); }
+  .tl-item:nth-child(even) { flex-direction:row-reverse; }
+  .tl-dot { flex-shrink:0; width:48px; height:48px; border-radius:50%; background:linear-gradient(135deg,var(--rose),var(--blush)); display:flex; align-items:center; justify-content:center; font-size:22px; box-shadow:0 0 0 6px rgba(232,71,106,0.15), 0 6px 24px rgba(232,71,106,0.35); z-index:1; }
+  .tl-content { flex:1; background:rgba(255,255,255,0.7); border-radius:18px; padding:22px 26px; border:1px solid rgba(232,71,106,0.18); backdrop-filter:blur(10px); box-shadow:0 8px 30px rgba(232,71,106,0.1); }
+  .tl-date { font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--rose); margin-bottom:6px; }
+  .tl-title { font-family:'Dancing Script',cursive; font-size:24px; color:var(--deep); margin-bottom:4px; }
+  .tl-desc { font-size:14px; color:#8a4060; line-height:1.6; }
+
+  /* QUIZ */
+  #quiz {
+    padding:90px 24px;
+    background:radial-gradient(ellipse at 50% 0%,rgba(249,168,192,0.4) 0%,transparent 70%),linear-gradient(180deg,#fce4ec 0%,#fff0f5 100%);
+  }
+  .quiz-card { max-width:560px; margin:0 auto; background:rgba(255,255,255,0.7); border-radius:28px; border:1px solid rgba(232,71,106,0.2); padding:52px 44px; backdrop-filter:blur(16px); box-shadow:0 20px 60px rgba(232,71,106,0.14); text-align:center; }
+  .quiz-progress { font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--rose); margin-bottom:20px; }
+  .quiz-q { font-family:'Playfair Display',serif; font-size:clamp(18px,3vw,22px); color:var(--deep); margin-bottom:28px; line-height:1.45; }
+  .quiz-opts { display:flex; flex-wrap:wrap; gap:14px; justify-content:center; }
+  .quiz-btn { padding:12px 26px; border-radius:30px; border:1.5px solid var(--rose); background:rgba(232,71,106,0.07); color:var(--deep); font-size:15px; cursor:pointer; transition:all .25s; font-family:'Lato',sans-serif; }
+  .quiz-btn:hover, .quiz-btn.selected { background:var(--rose); color:#fff; box-shadow:0 6px 22px var(--glow); transform:scale(1.04); }
+  .quiz-next { margin-top:30px; padding:13px 38px; border-radius:30px; background:linear-gradient(135deg,var(--rose),#c0305a); color:#fff; border:none; font-size:15px; cursor:pointer; display:none; box-shadow:0 8px 28px var(--glow); transition:transform .2s; font-family:'Lato',sans-serif; }
+  .quiz-next:hover { transform:scale(1.04); }
+  .quiz-result { display:none; }
+  .result-icon { font-size:56px; margin-bottom:16px; animation:pulse 1.5s infinite; }
+  .quiz-result h3 { font-family:'Dancing Script',cursive; font-size:32px; color:var(--rose); margin-bottom:12px; }
+  .quiz-result p { font-family:'Playfair Display',serif; font-style:italic; color:#6a2040; font-size:16px; line-height:1.6; }
+  .quiz-restart { margin-top:24px; background:none; border:1.5px solid var(--rose); color:var(--rose); border-radius:30px; padding:10px 26px; cursor:pointer; font-size:14px; transition:all .2s; font-family:'Lato',sans-serif; }
+  .quiz-restart:hover { background:var(--rose); color:#fff; }
+
+  /* GAME */
+  #game { padding:90px 24px; background:linear-gradient(135deg,#fff0f5 0%,#fce4ec 100%); }
+  .game-wrap { max-width:580px; margin:0 auto; text-align:center; }
+  .game-hud { display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; }
+  .game-score { font-family:'Dancing Script',cursive; font-size:26px; color:var(--rose); }
+  .game-timer { font-size:14px; letter-spacing:1px; color:var(--deep); background:rgba(232,71,106,0.1); padding:6px 16px; border-radius:20px; }
+  #game-canvas-wrap { position:relative; width:100%; height:380px; margin:10px 0 20px; border-radius:24px; overflow:hidden; background:linear-gradient(180deg,rgba(255,240,248,0.95),rgba(252,228,236,0.95)); border:2px solid rgba(232,71,106,0.25); box-shadow:0 12px 40px rgba(232,71,106,0.15); }
+  #game-canvas { width:100%; height:100%; display:block; cursor:crosshair; }
+  .game-start-btn { padding:14px 40px; border-radius:30px; background:linear-gradient(135deg,var(--rose),#c0305a); color:#fff; border:none; font-size:16px; cursor:pointer; box-shadow:0 8px 28px var(--glow); transition:transform .2s; font-family:'Lato',sans-serif; }
+  .game-start-btn:hover { transform:scale(1.05); }
+  #game-result { display:none; margin-top:16px; }
+  #game-result h3 { font-family:'Dancing Script',cursive; font-size:30px; color:var(--rose); }
+  #game-result p { font-family:'Playfair Display',serif; font-style:italic; color:#6a2040; margin-top:8px; font-size:15px; }
+
+  /* POPUP TRIGGER */
+  #popup-trigger-wrap {
+    text-align:center; padding:80px 24px;
+    background:radial-gradient(ellipse at center,rgba(249,168,192,0.3) 0%,transparent 70%),linear-gradient(180deg,#fff5f8 0%,#fce4ec 100%);
+  }
+  .popup-open-btn {
+    padding:18px 50px; border-radius:40px;
+    background:linear-gradient(135deg,var(--rose),#d03060); color:#fff; border:none; font-size:20px; cursor:pointer;
+    font-family:'Dancing Script',cursive; box-shadow:0 12px 40px rgba(232,71,106,0.4);
+    animation:popGlow 2.5s ease-in-out infinite; transition:transform .2s;
+  }
+  .popup-open-btn:hover { transform:scale(1.06); }
+  @keyframes popGlow {
+    0%,100%{ box-shadow:0 12px 40px rgba(232,71,106,0.4), 0 0 0 0 rgba(232,71,106,0.3); }
+    50%{ box-shadow:0 12px 40px rgba(232,71,106,0.5), 0 0 0 20px rgba(232,71,106,0); }
+  }
+
+  /* POPUP */
+  #popup-overlay { display:none; position:fixed; inset:0; z-index:200; background:rgba(80,0,25,0.7); backdrop-filter:blur(8px); align-items:center; justify-content:center; }
+  #popup-overlay.active { display:flex; }
+  .popup-box { max-width:500px; width:92%; background:rgba(255,245,250,0.97); border-radius:28px; padding:52px 44px; text-align:center; border:1.5px solid rgba(232,71,106,0.3); box-shadow:0 0 60px rgba(232,71,106,0.4); animation:popIn .4s ease; position:relative; }
+  .popup-close { position:absolute; top:18px; right:22px; background:none; border:none; font-size:22px; cursor:pointer; color:#a04060; }
+  .popup-box .p-heart { font-size:56px; animation:pulse 1.5s infinite; margin-bottom:16px; display:block; }
+  .popup-box h2 { font-family:'Dancing Script',cursive; font-size:36px; color:var(--rose); margin-bottom:18px; }
+  .popup-box p { font-family:'Playfair Display',serif; font-style:italic; font-size:16px; color:#6a2040; line-height:1.8; }
+  .popup-glow { position:absolute; inset:-20px; border-radius:38px; box-shadow:0 0 60px 10px rgba(232,71,106,0.2); pointer-events:none; animation:pulseGlow 2s infinite; }
+  @keyframes pulseGlow{0%,100%{opacity:.5;}50%{opacity:1;}}
+
+  /* FINAL */
+  #final {
+    min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center;
+    text-align:center; padding:80px 24px;
+    background:radial-gradient(ellipse at 30% 50%, rgba(232,71,106,0.28) 0%, transparent 55%),
+               radial-gradient(ellipse at 70% 40%, rgba(249,168,192,0.35) 0%, transparent 55%),
+               linear-gradient(160deg,#fce4ec 0%,#fff0f8 50%,#ffe4ee 100%);
+  }
+  .final-big { font-family:'Dancing Script',cursive; font-size:clamp(48px,9vw,100px); color:var(--deep); line-height:1.1; animation:glowPulse 3s ease-in-out infinite; }
+  .final-big span { color:var(--rose); }
+  @keyframes glowPulse {
+    0%,100%{ text-shadow:0 0 30px rgba(232,71,106,0.3),0 4px 20px rgba(139,26,58,0.2); }
+    50%{ text-shadow:0 0 70px rgba(232,71,106,0.6),0 4px 30px rgba(139,26,58,0.3); }
+  }
+  .final-sub { font-family:'Playfair Display',serif; font-style:italic; font-size:clamp(18px,3vw,26px); color:#a04060; margin-top:22px; max-width:480px; }
+  .final-hearts { margin-top:40px; display:flex; gap:18px; font-size:36px; justify-content:center; }
+  .final-hearts span { animation:pulse 2s ease-in-out infinite; }
+  .final-hearts span:nth-child(2){ animation-delay:.3s; }
+  .final-hearts span:nth-child(3){ animation-delay:.6s; }
+
+  /* REVEAL */
+  .reveal { opacity:0; transform:translateY(36px); transition:opacity .7s,transform .7s; }
+  .reveal.visible { opacity:1; transform:translateY(0); }
+
+  /* MOBILE */
+  @media(max-width:600px){
+    .msg-card,.quiz-card,.popup-box{ padding:32px 20px; }
+    .tl-item,.tl-item:nth-child(even){ flex-direction:column; align-items:flex-start; }
+    .tl-line{ left:24px; }
+    nav { gap:14px; }
+  }
+</style>
+</head>
+<body>
+
+<div id="cursor">❤️</div>
+<div id="hearts-bg"></div>
+
+<nav>
+  <a href="#hero">Home</a>
+  <a href="#message">Letter</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#timeline">Journey</a>
+  <a href="#quiz">Quiz</a>
+  <a href="#game">Game</a>
+  <a href="#final">Forever</a>
+</nav>
+
+<!-- Add your own romantic mp3 URL below -->
+<audio id="bg-music" loop>
+  <source src="YOUR_MUSIC_URL_HERE.mp3" type="audio/mpeg"/>
+</audio>
+
+<!-- ══ HERO ══ -->
+<section id="hero">
+  <div class="hero-badge">✦ 2 Months Together ✦</div>
+  <h1 class="hero-main">Happy 2 Months<br><span>Sriju</span> ❤️</h1>
+  <p class="hero-sub">"From the day you came into my life, everything became more beautiful…"</p>
+  <div class="hero-hearts">❤️ 🌸 💖 🌸 ❤️</div>
+  <button class="music-btn" onclick="toggleMusic()" id="music-btn">🎵 Play Music</button>
+</section>
+
+<!-- ══ LOVE MESSAGE ══ -->
+<section id="message">
+  <div class="msg-card reveal">
+    <div class="msg-title">Mero Srijuu ❤️</div>
+    <div id="typewriter-text"><span class="cursor-blink"></span></div>
+  </div>
+</section>
+
+<!-- ══ GALLERY ══ -->
+<section id="gallery">
+  <div class="section-title reveal">Our Beautiful Moments</div>
+  <p class="section-sub reveal">Every photo is a memory I treasure forever</p>
+  <div class="gallery-grid" id="gallery-grid"></div>
+</section>
+
+<!-- ══ TIMELINE ══ -->
+<section id="timeline">
+  <div class="section-title reveal">Our 2-Month Journey</div>
+  <p class="section-sub reveal">Every little moment that made us, us…</p>
+  <div class="tl-wrap">
+    <div class="tl-line"></div>
+    <div class="tl-item">
+      <div class="tl-dot">💬</div>
+      <div class="tl-content">
+        <div class="tl-date">Day 1</div>
+        <div class="tl-title">First Talk</div>
+        <div class="tl-desc">That first message, that first hello — neither of us knew it would change everything.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot">😊</div>
+      <div class="tl-content">
+        <div class="tl-date">Week 1</div>
+        <div class="tl-title">First Smile</div>
+        <div class="tl-desc">The first time you smiled at something I said — I knew I wanted to make you smile forever.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot">🥰</div>
+      <div class="tl-content">
+        <div class="tl-date">Week 2</div>
+        <div class="tl-title">We Became One</div>
+        <div class="tl-desc">From strangers to something so beautiful. You accepted me with all my flaws.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot">🌸</div>
+      <div class="tl-content">
+        <div class="tl-date">Week 4</div>
+        <div class="tl-title">Special Moments</div>
+        <div class="tl-desc">Late night talks, random laughter, small fights — every moment painted my world pink.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot">💌</div>
+      <div class="tl-content">
+        <div class="tl-date">Week 6</div>
+        <div class="tl-title">I Realized</div>
+        <div class="tl-desc">Without you, timi bina sabai adhooro lagcha. You are my home, my peace, my everything.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot">❤️</div>
+      <div class="tl-content">
+        <div class="tl-date">2 Months</div>
+        <div class="tl-title">Forever Starts Here</div>
+        <div class="tl-desc">Two months down, a lifetime to go. Happy anniversary, Sriju. This is just the beginning.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ QUIZ ══ -->
+<section id="quiz">
+  <div class="section-title reveal">Our Love Quiz 💖</div>
+  <p class="section-sub reveal">Let's see what the universe says about us…</p>
+  <div class="quiz-card reveal">
+    <div id="quiz-inner">
+      <div class="quiz-progress" id="quiz-progress">Question 1 of 5</div>
+      <div class="quiz-q" id="quiz-question"></div>
+      <div class="quiz-opts" id="quiz-opts"></div>
+      <button class="quiz-next" id="quiz-next" onclick="nextQuestion()">Next ❤️</button>
+    </div>
+    <div class="quiz-result" id="quiz-result">
+      <div class="result-icon">💖</div>
+      <h3 id="result-title"></h3>
+      <p id="result-msg"></p>
+      <button class="quiz-restart" onclick="restartQuiz()">Play Again 🔁</button>
+    </div>
+  </div>
+</section>
+
+<!-- ══ GAME ══ -->
+<section id="game">
+  <div class="section-title reveal">Catch the Heart 💕</div>
+  <p class="section-sub reveal">Click every falling heart — just like how you caught mine…</p>
+  <div class="game-wrap reveal">
+    <div class="game-hud">
+      <div class="game-score">❤️ Score: <span id="g-score">0</span></div>
+      <div class="game-timer">⏱ Time: <span id="g-timer">20</span>s</div>
+    </div>
+    <div id="game-canvas-wrap">
+      <canvas id="game-canvas"></canvas>
+    </div>
+    <button class="game-start-btn" id="game-start-btn" onclick="startGame()">Start Game 💖</button>
+    <div id="game-result">
+      <h3>You caught my heart forever! ❤️</h3>
+      <p id="game-result-msg"></p>
+      <button class="quiz-restart" onclick="startGame()" style="margin-top:14px;">Play Again 🔁</button>
+    </div>
+  </div>
+</section>
+
+<!-- ══ POPUP TRIGGER ══ -->
+<div id="popup-trigger-wrap">
+  <div class="section-title reveal">A Secret Just For You 💌</div>
+  <p class="section-sub reveal" style="margin-bottom:36px;">Open if you're feeling brave, Madam Ji…</p>
+  <button class="popup-open-btn reveal" onclick="openPopup()">Click me Madam Ji 💌</button>
+</div>
+
+<div id="popup-overlay" onclick="closePopupOutside(event)">
+  <div class="popup-box">
+    <div class="popup-glow"></div>
+    <button class="popup-close" onclick="closePopup()">✕</button>
+    <span class="p-heart">💌</span>
+    <h2>Mero Pyaari Sriju ❤️</h2>
+    <p>
+      Timi mero jivan ko sababhanda ramro kura ho.<br><br>
+      You are my warmth on cold days, my smile on sad days, and my peace in the chaos.<br><br>
+      Sorry for every little mistake, every moment I made you worry. I love you more than words can ever hold.<br><br>
+      <em>Timi bina sabai adhooro lagcha.</em><br><br>
+      — Tumharo Mohit 💕
+    </p>
+  </div>
+</div>
+
+<!-- ══ FINAL ══ -->
+<section id="final">
+  <div class="final-big reveal">I Love You<br><span>Sriju</span> ❤️<br>Forever &amp; Always</div>
+  <p class="final-sub reveal">"Two months of you is worth a lifetime of anyone else."</p>
+  <div class="final-hearts reveal"><span>💖</span><span>❤️</span><span>🌸</span></div>
+</section>
+
+<div id="lightbox">
+  <span id="lightbox-close">✕</span>
+  <img src="" alt="Memory"/>
+</div>
+
+<script>
+// ══ CURSOR ══
+const cur = document.getElementById('cursor');
+document.addEventListener('mousemove', e => {
+  cur.style.left = e.clientX + 'px';
+  cur.style.top = e.clientY + 'px';
+  if (Math.random() < 0.15) spawnTrail(e.clientX, e.clientY);
+});
+function spawnTrail(x, y) {
+  const t = document.createElement('div');
+  t.className = 'heart-trail';
+  t.textContent = ['❤','💕','🌸','✨'][Math.floor(Math.random()*4)];
+  t.style.cssText = `left:${x}px;top:${y}px;color:hsl(${Math.random()*20+340},80%,65%)`;
+  document.body.appendChild(t);
+  setTimeout(() => t.remove(), 900);
+}
+
+// ══ FLOATING HEARTS ══
+const hbg = document.getElementById('hearts-bg');
+['❤','💕','🌸','💖','✨','💗','🌷'].forEach((sym, i) => {
+  for (let j = 0; j < 4; j++) {
+    const h = document.createElement('div');
+    h.className = 'fbheart';
+    h.textContent = sym;
+    h.style.cssText = `left:${Math.random()*100}%;font-size:${14+Math.random()*16}px;animation-duration:${12+Math.random()*16}s;animation-delay:${-Math.random()*18}s`;
+    hbg.appendChild(h);
+  }
+});
+
+// ══ MUSIC ══
+const audio = document.getElementById('bg-music');
+let playing = false;
+function toggleMusic() {
+  if (playing) { audio.pause(); document.getElementById('music-btn').textContent = '🎵 Play Music'; }
+  else { audio.play().catch(() => {}); document.getElementById('music-btn').textContent = '🔇 Pause Music'; }
+  playing = !playing;
+}
+
+// ══ SCROLL REVEAL ══
+const ro = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal, .tl-item').forEach(el => ro.observe(el));
+
+// ══ TYPEWRITER ══
+const loveMsg = `Mero Srijuu… ❤️\n\nI don't have perfect words, but I have a heart that beats a little faster every time I hear your name.\n\nSorry for every small mistake — for the moments I made you feel unseen, for every word that came out wrong, for every time I wasn't enough. I'm sorry, and I mean it with all my heart.\n\nYou came into my life quietly, like the first rain of spring, and suddenly everything felt alive again.\n\nTimi bina sabai adhooro lagcha — without you, everything feels incomplete. You are my missing piece.\n\nI love your laugh. I love how you pretend to be strong. I love the person you are and the person you make me want to be.\n\nHappy 2 months, Madam Ji. Here's to forever. 💖`;
+
+const tw = document.getElementById('typewriter-text');
+let charIdx = 0, twStarted = false;
+
+function typeChar() {
+  if (charIdx >= loveMsg.length) return;
+  const ch = loveMsg[charIdx];
+  const cursorEl = tw.querySelector('.cursor-blink');
+  if (ch === '\n') {
+    cursorEl.before(document.createElement('br'));
+  } else {
+    cursorEl.before(document.createTextNode(ch));
+  }
+  charIdx++;
+  setTimeout(typeChar, ch === '\n' ? 180 : 26);
+}
+
+new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting && !twStarted) { twStarted = true; setTimeout(typeChar, 700); }
+  });
+}, { threshold: 0.3 }).observe(document.getElementById('message'));
+
+// ══ GALLERY ══
+// 🖼 ADD YOUR PHOTOS HERE — replace '' with image URLs or relative paths like 'photos/photo1.jpg'
+const photos = [
+  { src: '', caption: 'First Day Together 💕' },
+  { src: '', caption: 'Your Smile ❤️' },
+  { src: '', caption: 'Together Always 🌸' },
+  { src: '', caption: 'Our Happiness 💖' },
+  { src: '', caption: 'You & Me 🌷' },
+  { src: '', caption: 'Forever Moments ✨' },
+];
+const grid = document.getElementById('gallery-grid');
+photos.forEach(p => {
+  const div = document.createElement('div');
+  div.className = 'g-item';
+  if (p.src) {
+    div.innerHTML = `<img src="${p.src}" alt="${p.caption}" loading="lazy"/>
+      <div class="g-overlay"><div class="g-caption">${p.caption}</div></div>`;
+    div.onclick = () => openLightbox(p.src);
+  } else {
+    div.innerHTML = `<div class="g-placeholder"><div class="ph-icon">🌸</div><div>${p.caption}</div><div style="font-size:11px;margin-top:4px;opacity:.5">Add photo here</div></div>`;
+  }
+  grid.appendChild(div);
+});
+
+const lb = document.getElementById('lightbox');
+document.getElementById('lightbox-close').onclick = () => lb.classList.remove('active');
+lb.addEventListener('click', e => { if (e.target === lb) lb.classList.remove('active'); });
+function openLightbox(src) { lb.querySelector('img').src = src; lb.classList.add('active'); }
+
+// ══ QUIZ ══
+const questions = [
+  { q: "Who loves more? 😏", opts: ["Me (obviously!)", "You (sahi ho!)", "50/50 la 💕"] },
+  { q: "Who gets angry more? 😤", opts: ["Me 🙈", "You, Madam Ji 😂", "Hami duitai 😅"] },
+  { q: "Do you love me forever? 🥺", opts: ["Forever ❤️", "Forever + 1 day 😭", "More than forever 💖"] },
+  { q: "What's our vibe? ✨", opts: ["Chaotic but cute 🤣", "Sweet & soft 🌸", "Literally goals 💕"] },
+  { q: "Best feeling in the world? 🌍", opts: ["Talking to you ❤️", "Your smile 🥰", "Being yours 💖"] },
+];
+let qIdx = 0, answers = [];
+function renderQ() {
+  const q = questions[qIdx];
+  document.getElementById('quiz-progress').textContent = `Question ${qIdx + 1} of ${questions.length}`;
+  document.getElementById('quiz-question').textContent = q.q;
+  const opts = document.getElementById('quiz-opts');
+  opts.innerHTML = '';
+  q.opts.forEach(o => {
+    const b = document.createElement('button');
+    b.className = 'quiz-btn'; b.textContent = o;
+    b.onclick = () => {
+      opts.querySelectorAll('.quiz-btn').forEach(x => x.classList.remove('selected'));
+      b.classList.add('selected');
+      answers[qIdx] = o;
+      document.getElementById('quiz-next').style.display = 'inline-block';
+    };
+    opts.appendChild(b);
+  });
+  document.getElementById('quiz-next').style.display = 'none';
+}
+function nextQuestion() {
+  if (answers[qIdx] === undefined) return;
+  qIdx++;
+  qIdx < questions.length ? renderQ() : showResult();
+}
+function showResult() {
+  document.getElementById('quiz-inner').style.display = 'none';
+  document.getElementById('quiz-result').style.display = 'block';
+  const titles = ["You are officially the best girlfriend ever! 💖", "The universe says: You two are made for each other! 🌸", "Love level: INFINITE! ❤️"];
+  const msgs = ["Sriju + Mohit = Forever. Science, math & stars all confirmed it. ✨", "No algorithm needed — you're perfect for him. 💕", "Two months? More like the beginning of a beautiful forever. 🌷"];
+  const ri = Math.floor(Math.random() * titles.length);
+  document.getElementById('result-title').textContent = titles[ri];
+  document.getElementById('result-msg').textContent = msgs[ri];
+}
+function restartQuiz() {
+  qIdx = 0; answers = [];
+  document.getElementById('quiz-inner').style.display = 'block';
+  document.getElementById('quiz-result').style.display = 'none';
+  renderQ();
+}
+renderQ();
+
+// ══ GAME ══
+const canvas = document.getElementById('game-canvas');
+const ctx = canvas.getContext('2d');
+let hearts = [], score = 0, timeLeft = 20, gameRunning = false, gameInterval, timerInterval;
+
+function resizeCanvas() {
+  canvas.width = canvas.parentElement.clientWidth;
+  canvas.height = 380;
+}
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
+
+function startGame() {
+  document.getElementById('game-start-btn').style.display = 'none';
+  document.getElementById('game-result').style.display = 'none';
+  hearts = []; score = 0; timeLeft = 20; gameRunning = true;
+  document.getElementById('g-score').textContent = '0';
+  document.getElementById('g-timer').textContent = '20';
+  clearInterval(gameInterval); clearInterval(timerInterval);
+
+  gameInterval = setInterval(() => {
+    if (!gameRunning) return;
+    if (Math.random() < 0.07) {
+      hearts.push({
+        x: Math.random() * (canvas.width - 40) + 20,
+        y: -30,
+        speed: 1.5 + Math.random() * 2.5,
+        size: 20 + Math.random() * 18,
+        emoji: Math.random() > 0.5 ? '❤' : '💕'
+      });
+    }
+    hearts.forEach(h => h.y += h.speed);
+    hearts = hearts.filter(h => h.y < canvas.height + 50);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    hearts.forEach(h => {
+      ctx.font = h.size + 'px serif';
+      ctx.fillText(h.emoji, h.x - h.size / 2, h.y);
+    });
+  }, 30);
+
+  timerInterval = setInterval(() => {
+    timeLeft--;
+    document.getElementById('g-timer').textContent = timeLeft;
+    if (timeLeft <= 0) endGame();
+  }, 1000);
+
+  canvas.onclick = e => {
+    if (!gameRunning) return;
+    const rect = canvas.getBoundingClientRect();
+    const cx = (e.clientX - rect.left) * (canvas.width / rect.width);
+    const cy = (e.clientY - rect.top) * (canvas.height / rect.height);
+    let hit = false;
+    hearts = hearts.filter(h => {
+      const dx = cx - h.x, dy = cy - h.y;
+      if (Math.sqrt(dx * dx + dy * dy) < h.size + 10) { hit = true; score++; document.getElementById('g-score').textContent = score; return false; }
+      return true;
+    });
+  };
+}
+
+function endGame() {
+  gameRunning = false;
+  clearInterval(gameInterval); clearInterval(timerInterval);
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  const msg = score > 15 ? 'Incredible! You caught every heart — just like mine! 💖'
+            : score > 8 ? 'So many hearts! You truly love deeply. 🌸'
+            : "You caught my heart forever, and that's all that matters. ❤️";
+  document.getElementById('game-result-msg').innerHTML = `Score: <strong>${score}</strong> hearts — ${msg}`;
+  document.getElementById('game-result').style.display = 'block';
+  document.getElementById('game-start-btn').style.display = 'inline-block';
+  document.getElementById('game-start-btn').textContent = 'Play Again 🔁';
+}
+
+// ══ POPUP ══
+function openPopup() { document.getElementById('popup-overlay').classList.add('active'); }
+function closePopup() { document.getElementById('popup-overlay').classList.remove('active'); }
+function closePopupOutside(e) { if (e.target === document.getElementById('popup-overlay')) closePopup(); }
+</script>
+</body>
+</html>
